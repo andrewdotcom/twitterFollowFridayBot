@@ -59,6 +59,7 @@ def ff(debug=False, user="andrewdotcom", numberofshouts=5):
 
     try:
         tweet(api, get_followers(api, user), numberofshouts, debug)
+        print("Done! 👍🏻")
     except:
         print("Abort, Abort! - Could not post to twitter 😭")
     #return
