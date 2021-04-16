@@ -43,7 +43,7 @@ def tweet(api, followers, peeps=0, debug=False):
     except:
         print("Could not post")
 
-def ff(debug=False, numberofshouts=5):
+def ff(debug=False, user="andrewdotcom", numberofshouts=5):
     # Authenticate to Twitter
     auth = tweepy.OAuthHandler(os.environ.get('T_KEY'), os.environ.get('T_SECRET'))
     auth.set_access_token(os.environ.get('T_TOKEN'), os.environ.get('T_TOKEN_SECRET'))
@@ -58,10 +58,10 @@ def ff(debug=False, numberofshouts=5):
         return
 
     try:
-        tweet(api, get_followers(api, "andrewdotcom"), numberofshouts, debug)
+        tweet(api, get_followers(api, user), numberofshouts, debug)
     except:
         print("Abort, Abort! - Could not post to twitter 😭")
     #return
 
 #Follow Friday - True for Debug (won't actually tweet)
-ff(False, 5)
+ff(False, "andrewdotcom", 5)
